@@ -1,0 +1,148 @@
+extends ../layout/main
+
+block variables
+	- const pageTitle = "Главная";
+	- const bodyClass = "front";
+
+block content
+	section.promo 
+		.container
+			.promo__body
+				h1 производство деревянных палочек
+				.promo__video 
+					video(muted autoplay playsinline loop)
+						source(src="video/promo.mp4" type="video/mp4") 
+						source(src="video/promo.webm" type="video/webm") 
+					a(href="#products").promo__arrow
+						<svg class="arrow" width="31" height="39" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15.9712 0V39" stroke="#1D1D1D" stroke-width="1.2"/>
+							<path d="M15.9712 39C15.9712 33.7852 12.9712 23.2844 0.971191 23" stroke="#1D1D1D" stroke-width="1.2"/>
+							<path d="M15.9712 39C15.9712 33.7852 18.9712 23.2844 30.9712 23" stroke="#1D1D1D" stroke-width="1.2"/>
+						</svg>
+						<svg class="circle" width="90" height="89" viewBox="0 0 90 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="45.473" cy="44.5" r="44" stroke="url(#paint0_linear_152_2776)"/>
+							<defs>
+							<linearGradient id="paint0_linear_152_2776" x1="45.473" y1="-3.05176e-05" x2="45.473" y2="89" gradientUnits="userSpaceOnUse">
+							<stop offset="0.588542" stop-color="#6C9751"/>
+							<stop offset="1" stop-color="#6C9751" stop-opacity="0"/>
+							</linearGradient>
+							</defs>
+						</svg> 
+	section.products#products
+		.products__marquee.swiper 
+			.swiper-wrapper 
+				.swiper-slide 
+					h2 наша продукция
+				.swiper-slide 
+					h2 наша продукция
+				.swiper-slide 
+					h2 наша продукция
+		.container 
+			ul.products__body 
+				li 
+					a(href="#")
+						.products__info
+							.products__icon 
+								img(src="img/icons/ice.svg", alt="")
+							.products__title Деревянные палочки для мороженого
+						.products__link 
+							span продукция
+						.products__img 
+							img(src="img/index/stick1.png", alt="")
+				li 
+					a(href="#")
+						.products__info
+							.products__icon 
+								img(src="img/icons/coffee.svg", alt="")
+							.products__title Деревянные размешиватели HoReCa
+						.products__link 
+							span продукция
+						.products__img 
+							img(src="img/index/stick2.png", alt="")
+	section.about 
+		.container 
+			.about__body 
+				.about__bg 
+					img(src="img/index/litera.svg", alt="")
+				.about__images 
+					img(src="img/index/about1.png", alt="").first
+					img(src="img/index/about2.png", alt="").second
+				.about__info 
+					h2(data-aos="fade-up" data-aos-duration="1000") о компании «антел» 
+					p(data-aos="fade-up" data-aos-duration="1000") Мы выпускаем деревянные палочки для мороженого и размешиватели для холодных и горячих напитков.<br><br>Главным приоритетом для нас является выпуск продукции высочайшего качества. Все наши изделия изготавливаются из древесины березы, не имеют постороннего вкуса и запаха, тщательно шлифуются на новейшем оборудовании.<br><br>Основой стабильного развития нашего предприятия, является производство продукции на современном оборудовании. Мы автоматизировали процесс производства, поэтому продукция компании Антел соответствует строгим стандартам качества.
+		.about__slider
+			.swiper-button-prev.about__prev
+				<svg width="33" height="26" viewBox="0 0 33 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M33.0006 12.9497L0.631972 12.9497" stroke="#1D1D1D" stroke-width="0.995957"/>
+					<path d="M0.631269 12.9497C4.95938 12.9497 13.6746 15.4396 13.9107 25.3992" stroke="#1D1D1D" stroke-width="0.995957"/>
+					<path d="M0.631269 12.9497C4.95938 12.9497 13.6746 10.4598 13.9107 0.500246" stroke="#1D1D1D" stroke-width="0.995957"/>
+				</svg> 
+			.swiper-button-next.about__next
+				<svg width="33" height="26" viewBox="0 0 33 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M-0.000610352 12.9497L32.368 12.9497" stroke="#1D1D1D" stroke-width="0.995957"/>
+					<path d="M32.3688 12.9497C28.0407 12.9497 19.3254 15.4396 19.0894 25.3992" stroke="#1D1D1D" stroke-width="0.995957"/>
+					<path d="M32.3688 12.9497C28.0407 12.9497 19.3254 10.4598 19.0894 0.500246" stroke="#1D1D1D" stroke-width="0.995957"/>
+				</svg> 
+			.swiper-wrapper 
+				.swiper-slide 
+					a(href="img/index/slide1.jpeg" data-fancybox="gal1")
+						img(src="img/index/slide1.jpeg", alt="")
+				.swiper-slide 
+					a(href="img/index/slide2.jpeg" data-fancybox="gal1")
+						img(src="img/index/slide2.jpeg", alt="")
+				.swiper-slide
+					a(href="img/index/slide3.jpeg" data-fancybox="gal1") 
+						img(src="img/index/slide3.jpeg", alt="")
+	section.benefits 
+		.products__marquee.swiper 
+			.swiper-wrapper 
+				.swiper-slide 
+					h2 преимущества
+				.swiper-slide 
+					h2 преимущества
+				.swiper-slide 
+					h2 преимущества
+		.container 
+			ul.benefits__body
+				li(data-aos="fade-right" data-aos-delay="200" data-aos-duration="600")
+					.benefits__icon 
+						img(src="img/index/ben1.svg", alt="")
+					.wrap
+						.benefits__subtitle экологичное сырье
+						.benefits__text Продукция компании изготавливается из экологически чистого природного материала - отборная древесина березы.
+				li(data-aos="fade-up" data-aos-delay="400" data-aos-duration="600")
+					.benefits__icon 
+						img(src="img/index/ben2.svg", alt="")
+					.wrap
+						.benefits__subtitle высокое качество
+						.benefits__text Производство в нашей компании основано на принципе выполнения заказов качественно и в срок. Специалисты ответственно подходят к технологии изготовления продукции.
+				li(data-aos="fade-left" data-aos-delay="600" data-aos-duration="600")
+					.benefits__icon 
+						img(src="img/index/ben3.svg", alt="")
+					.wrap
+						.benefits__subtitle строгий контроль
+						.benefits__text На всех этапах ведется тщательный контроль качества продукции. Особое внимание уделяется строгому соблюдению влажности продукции, от этапа обработки заготовки до упаковки продукции. 
+	section.certificate
+		.container 
+			h2 сертификаты
+			.certificate__subtitle Наша продукция прошла добровольную сертификацию и все необходимые лабораторные исследования.				
+			ul.certificate__body 
+				li 
+					.certificate__title Палочки древесные для мороженого. Серийный выпуск.
+					a(data-src="img/index/ice.jpg" data-fancybox).btn 
+						<svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.8356 4.51053L8.47156 0.146469C8.37778 0.0526875 8.25062 0 8.118 0H1.60069C0.718063 0 0 0.718063 0 1.60069V14.3993C0 15.2819 0.718063 16 1.60069 16H11.3813C12.264 16 12.982 15.2819 12.982 14.3993V4.86406C12.9821 4.73147 12.9294 4.60428 12.8356 4.51053ZM8.618 1.70712L11.2749 4.36409H8.618V1.70712ZM11.3814 15H1.60069C1.26947 15 1 14.7305 1 14.3993V1.60069C1 1.26947 1.26947 1 1.60069 1H7.618V4.86406C7.618 5.14019 7.84188 5.36406 8.118 5.36406H11.9821V14.3993C11.9821 14.7305 11.7126 15 11.3814 15ZM10.066 8.30706C10.066 8.58319 9.84216 8.80706 9.56603 8.80706H3.41603C3.13991 8.80706 2.91603 8.58319 2.91603 8.30706C2.91603 8.03094 3.13991 7.80706 3.41603 7.80706H9.56603C9.84219 7.80706 10.066 8.03091 10.066 8.30706ZM10.066 11.7195C10.066 11.9957 9.84216 12.2195 9.56603 12.2195H3.41603C3.13991 12.2195 2.91603 11.9957 2.91603 11.7195C2.91603 11.4434 3.13991 11.2195 3.41603 11.2195H9.56603C9.84219 11.2195 10.066 11.4434 10.066 11.7195Z" fill="white"/>
+						</svg> 
+						span сертификат
+					.certificate__subel
+				li 
+					.certificate__title Размешиватели одноразовые древесные для напитков. Серийный выпуск.
+					a(data-src="img/index/skicks.jpg" data-fancybox).btn 
+						<svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.8356 4.51053L8.47156 0.146469C8.37778 0.0526875 8.25062 0 8.118 0H1.60069C0.718063 0 0 0.718063 0 1.60069V14.3993C0 15.2819 0.718063 16 1.60069 16H11.3813C12.264 16 12.982 15.2819 12.982 14.3993V4.86406C12.9821 4.73147 12.9294 4.60428 12.8356 4.51053ZM8.618 1.70712L11.2749 4.36409H8.618V1.70712ZM11.3814 15H1.60069C1.26947 15 1 14.7305 1 14.3993V1.60069C1 1.26947 1.26947 1 1.60069 1H7.618V4.86406C7.618 5.14019 7.84188 5.36406 8.118 5.36406H11.9821V14.3993C11.9821 14.7305 11.7126 15 11.3814 15ZM10.066 8.30706C10.066 8.58319 9.84216 8.80706 9.56603 8.80706H3.41603C3.13991 8.80706 2.91603 8.58319 2.91603 8.30706C2.91603 8.03094 3.13991 7.80706 3.41603 7.80706H9.56603C9.84219 7.80706 10.066 8.03091 10.066 8.30706ZM10.066 11.7195C10.066 11.9957 9.84216 12.2195 9.56603 12.2195H3.41603C3.13991 12.2195 2.91603 11.9957 2.91603 11.7195C2.91603 11.4434 3.13991 11.2195 3.41603 11.2195H9.56603C9.84219 11.2195 10.066 11.4434 10.066 11.7195Z" fill="white"/>
+						</svg> 
+						span сертификат
+					.certificate__subel
+	section.map 
+		.container 
+			#map

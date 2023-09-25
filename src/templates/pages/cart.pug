@@ -1,0 +1,156 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Оформить заказ";
+	//- const prevPage = {href: '', text: ''};
+	//- const pageTitle_OFF = true;
+
+block content
+
+	include ../blocks/breadcrumbs
+	.cart 
+		.container
+			.cart__banner На сайте не предусмотрена возможность покупки товара. Оплата производится только по счету который пришлет вам менеджер после согласования всех деталей заказа.
+			.cart__body 
+				h2.cart__subtitle
+					span состав заказа
+				ul 
+					li 
+						.cart__img 
+							img(src="img/index/product.jpeg", alt="")
+						.cart__info 
+							span Деревянные палочки для мороженого 94 мм (магнум)
+							span В коробке 10 000: штук
+							span Нанесение логотипа: да
+						.cart__count 
+							button(disabled).dec 
+								<svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 1.5)" fill="#1D1D1D"/>
+								</svg>
+							input(type="number", name="count"  value="3")
+							button.inc
+								<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4.8125" y="11" width="11" height="1.5" rx="0.75" transform="rotate(-90 4.8125 11)" fill="#1D1D1D"/>
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 6.1875)" fill="#1D1D1D"/>
+								</svg>
+						a(href="#").cart__rm 
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.823547 0.823517L13.1765 13.1765" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+								<path d="M0.823547 13.1765L13.1765 0.823542" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+							</svg> 
+					li 
+						.cart__img 
+							img(src="img/index/product.jpeg", alt="")
+						.cart__info 
+							span Деревянные палочки для мороженого 114 ММ
+							span В коробке 10 000 штук
+							span Нанесение логотипа: нет
+						.cart__count 
+							button.dec
+								<svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 1.5)" fill="#1D1D1D"/>
+								</svg>
+							input(type="number", name="count"  value="11") 
+							button.inc
+								<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4.8125" y="11" width="11" height="1.5" rx="0.75" transform="rotate(-90 4.8125 11)" fill="#1D1D1D"/>
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 6.1875)" fill="#1D1D1D"/>
+								</svg>
+						a(href="#").cart__rm 
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.823547 0.823517L13.1765 13.1765" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+								<path d="M0.823547 13.1765L13.1765 0.823542" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+							</svg> 
+					li 
+						.cart__img 
+							img(src="img/index/product.jpeg", alt="")
+						.cart__info 
+							span Деревянные палочки для мороженого 94 мм (магнум)
+							span В коробке 10 000 штук
+							span Нанесение логотипа: да
+						.cart__count 
+							button.dec
+								<svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 1.5)" fill="#1D1D1D"/>
+								</svg>
+							input(type="number", name="count" value="1")
+							button.inc
+								<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4.8125" y="11" width="11" height="1.5" rx="0.75" transform="rotate(-90 4.8125 11)" fill="#1D1D1D"/>
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 6.1875)" fill="#1D1D1D"/>
+								</svg>
+						a(href="#").cart__rm 
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.823547 0.823517L13.1765 13.1765" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+								<path d="M0.823547 13.1765L13.1765 0.823542" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+							</svg> 
+					li 
+						.cart__img 
+							img(src="img/index/product.jpeg", alt="")
+						.cart__info 
+							span Деревянные палочки для мороженого 114 ММ
+							span В коробке 10 000 штук
+							span Нанесение логотипа: да
+						.cart__count 
+							button.dec
+								<svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 1.5)" fill="#1D1D1D"/>
+								</svg>
+							input(type="number", name="count" value="44") 
+							button.inc
+								<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4.8125" y="11" width="11" height="1.5" rx="0.75" transform="rotate(-90 4.8125 11)" fill="#1D1D1D"/>
+									<rect width="11" height="1.5" rx="0.75" transform="matrix(1 0 0 -1 0 6.1875)" fill="#1D1D1D"/>
+								</svg>
+						a(href="#").cart__rm 
+							<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.823547 0.823517L13.1765 13.1765" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+								<path d="M0.823547 13.1765L13.1765 0.823542" stroke="#8D8D8D" stroke-width="1.64706" stroke-linecap="round"/>
+							</svg> 
+			form
+				fieldset.cart__delivery
+					h2.cart__subtitle
+						span поставка
+					.wrapper 
+						.item
+							label(for="sel") Условия поставки
+							select(name="").select#sel
+								option(value="1" selected="selected") Самовывоз
+								option(value="2") Доставка до склада грузополучателя
+						.item.date
+							label(for="date") Желаемый срок *
+							input(type="text" placeholder="__.__.____")#date
+					.cart__adress Ваш заказ вы сможете забрать по адресу: Нижегородская область р.п. Тоншаево, ул. Заводская, д.6
+				fieldset.cart__contacts
+					h2.cart__subtitle
+						span контактные данные
+					.cart__addInfo 
+						span Оставьте контактные данные, менеджер свяжется с вами, чтобы уточнить цены* и информацию по заказу.
+						span На сайте не предусмотрена возможность покупки товара. Оплата производится только по счету который пришлет вам менеджер после согласования всех деталей заказа.
+					.form-wrapper 
+						.form-item.empty.name
+							label(for="cart-name") Ваше имя *
+							input(type="text" required="required")#cart-name
+						.form-item.empty.name
+							label(for="cart-company") Компания
+							input(type="text")#cart-company
+						.form-item.empty.phone
+							label(for="cart-phone") Телефон *
+							input(type="tel" required="required" )#cart-phone
+						.form-item.empty.name
+							label(for="cart-city") Город получения
+							input(type="text")#cart-city
+						.form-item.empty.name 
+							label(for="cart-mail").name.empty E-mail *
+							input(type="email" required="required")#cart-mail
+						.form-item.empty.name
+							label(for="cart-comment") Комментарий
+							input(type="text" )#cart-comment
+					.form-bottom 
+						.form-item.submit 
+							input(type="submit" value="Отправить заявку").btn
+						.form-item.pers 
+							span Отправляя форму, вы даете согласие на обработку <a href="#">персональных данных</a> 
+	section.map 
+		.container 
+			#map

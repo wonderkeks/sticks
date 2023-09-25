@@ -1,0 +1,19 @@
+nav.pager
+	ul
+		li.pager__item.pager__item--first
+			a(href="#") Первая страница
+		li.pager__item.pager__item--previous
+			a(href="#") Предыдущий
+
+		- for(let i = 1; i < 6; i++)
+			li.pager__item
+				a(href="", class=(i == 1 ? 'is-active' : ''))=i
+
+		li.pager__item.pager__item--ellipsis
+			a(href="#") ...
+		li.pager__item
+			a(href="#") 10
+		li.pager__item.pager__item--next
+			a(href="#") Следующий
+		li.pager__item.pager__item--last
+			a(href="#") Последний

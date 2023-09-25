@@ -1,0 +1,623 @@
+.cart {
+  
+  &__banner {
+	border-radius: 0px 30px;
+	width: 100%;
+	background-color: $beige2;
+	padding: 22px 0;
+	text-align: center;
+	margin-top: 5px;
+  }
+  &__subtitle {
+	font-family: $font2;
+	font-size: 36px;
+	display: flex;
+	gap: 31px;
+	align-items: center;
+	span {
+	  width: fit-content;
+	  flex-shrink: 0;
+	  position: relative;
+	  &::after {
+		content: url("../img/index/leaf2.png");
+		position: absolute;
+		top: -27%;
+		right: -85px;
+		width: 57.932px;
+		height: 82px;
+		object-fit: contain;
+		object-position: center;
+	  }
+	}
+	&::after {
+	  content: "";
+	  width: 100%;
+	  height: 1px;
+	  background-color: $beige2;
+	}
+  }
+  &__body {
+	margin-top: 90px;
+	ul {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 40px;
+	  margin-top: 70px;
+	  width: 1009px;
+	  li {
+		display: flex;
+		align-items: center;
+	  }
+	}
+  }
+  &__img {
+	width: 132px;
+	height: 106px;
+	img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  object-position: center;
+	}
+  }
+  &__info {
+	display: flex;
+	flex-direction: column;
+	width: 509px;
+	margin-left: 40px;
+	span {
+	  &:first-child {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: $black;
+	  }
+	  &:nth-child(2) {
+		margin-top: 12px;
+	  }
+	  &:nth-child(3) {
+		margin-top: 8px;
+	  }
+	  font-size: 14px;
+	  color: $gray4;
+	}
+  }
+  &__count {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-left: auto;
+	button {
+	  width: 40px;
+	  height: 40px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  border-radius: 100%;
+	  background-color: #f8f8f8;
+	  transition: all 0.3s;
+	  &[disabled] {
+		svg {
+		  rect {
+			fill: #cacaca;
+		  }
+		}
+	  }
+	  svg {
+		rect {
+		  transition: fill 0.3s;
+		}
+	  }
+	  @media (min-width: 1000px) {
+		&:not([disabled]):hover {
+		  background-color: $beige3;
+		  svg {
+			rect {
+			  fill: #ffffff;
+			}
+		  }
+		}
+	  }
+	}
+	input {
+	  width: 21px;
+	  font-size: 16px;
+	  height: 24px;
+	  text-align: center;
+	}
+  }
+  &__rm {
+	margin-left: 60px;
+	@media (min-width: 1000px) {
+	  &:hover {
+		svg {
+		  path {
+			stroke: $black;
+		  }
+		}
+	  }
+	}
+  }
+  &__delivery {
+	margin-top: 150px;
+	.wrapper  {
+		margin-top: 111px;
+		width: 921px; 
+		display: flex;
+		gap: 31px;
+		.item {
+			display: flex;
+			flex-direction: column;
+			label {
+				font-size: 15px; 
+				line-height: 1.46em;
+				color: $gray4;
+			}
+			input {
+				height: 55px;
+				width: 378px;
+				font-size: 18px; 
+				border-bottom: 1px solid $gray2;
+			}
+			&.date {
+				position: relative;
+				&::after {
+					content: url('../img/icons/calendar.svg');
+					position: absolute;
+					right: 0;
+					top: 50%;
+				}
+			}
+		}
+	}
+  }
+  &__adress {
+	margin-top: 60px;
+  }
+  form {
+	fieldset {
+		border: none;
+	}
+  }
+  &__contacts {
+	margin-top: 150px;
+	.form-wrapper {
+		margin-top: 60px;
+		width: 1191px; 
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		row-gap: 20px;
+		position: relative;
+		&::after {
+			content: '*Поля обязательные для заполения';
+			font-size: 13px;
+			line-height: 1.38em;
+			color: $gray4;
+			position: absolute;
+			left: 0;
+			bottom: -20px;
+		}
+		.form-item {
+			&.name, &.phone {
+				margin-top: 35px;
+				width: 512px;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				input {
+					width: 100%;
+					height: 54px;
+					border-bottom: 1px solid $gray2;
+					transition: all 0.3s;
+					padding-bottom: 20px;
+					font-size: 18px; 
+					line-height: 1em;
+					cursor: pointer;
+					@media (min-width: 1000px) {
+						&:hover {
+							border-bottom: 1px solid $beige3;
+						}
+					}
+				}
+				label {
+					font-size: 15px; 
+					color: $gray4;
+					position: absolute;
+					transition: all 0.3s;
+					bottom: 58px;
+				}
+				&.empty {
+					label {
+						bottom: 21px;
+						font-size: 18px;
+					}
+					input {
+						border-bottom: 1px solid $gray2;
+						@media (min-width: 1000px) {
+							&:hover {
+								border-bottom: 1px solid $beige3;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.form-bottom  {
+		margin-top: 60px;
+		display: flex;
+		gap: 32px;
+		align-items: center;
+		.form-item.pers  {
+			max-width: 393px;
+		}
+		.form-item.submit  {
+			.btn {
+				background-color: $beige3;
+				@media (min-width: 1000px) {
+					&:hover {
+						background-color: $brown;
+					}
+				}
+			}
+		}
+	}
+  }
+  &__addInfo {
+	margin-top: 83px;
+	max-width: 812px;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	span {
+		&:first-child {
+			font-size: 16px;
+			line-height: 1.5em;
+		}
+		&:last-child {
+			max-width: 564px;
+			color: $gray4;
+			font-size: 13px;
+			line-height: 1.38em;
+			padding-left: 13px;
+			position: relative;
+			&::after {
+				content: url('../img/icons/cat.svg');
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+  }
+}
+
+.air-datepicker {
+	width: 378px;
+	font-family: $font;
+}
+.air-datepicker--content {
+	padding: 0 42px 28px 42px;
+}
+.air-datepicker-nav--title {
+	color: $brown;
+	text-transform: uppercase;
+	font-family: $font;
+}
+
+.air-datepicker-body--day-name {
+	font-size: 13px; 
+	text-transform: uppercase; 
+	color: $black;
+}
+
+.air-datepicker-nav {
+	border-bottom: none;
+	padding: 28px 42px 10px 42px;
+}
+
+.air-datepicker-cell.-selected-, .air-datepicker-cell.-selected-.-current-, .air-datepicker-cell.-selected-.-focus- {
+	background: $brown;
+}
+.air-datepicker-cell.-current- {
+	color: $gray4;
+}
+
+.select {
+  display: none;
+  &-box {
+	width: 512px;
+	height: 55px;
+	display: inline-flex;
+	z-index: 1;
+	position: relative;
+	flex-shrink: 0;
+  }
+  &-styled {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 45px 0 0;
+	border-bottom: 1px solid $gray2;
+	font-size: 18px; 
+	cursor: pointer;
+	z-index: 1;
+	position: relative;
+	&:after {
+	  content: url('../img/icons/select.svg');
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  right: 18px;
+	  transition: transform 0.2s;
+	}
+	&.active:after {
+	  transform: translateY(-50%) rotateX(180deg);
+	}
+  }
+  &-options {
+	height: 0;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	top: calc(100% + 3px);
+	left: 0;
+	transition: height 0.3s ease;
+	
+	ul {
+	  border: 1px solid $gray2;;
+	  background-color: #fff;
+	  padding: 5px 0;
+	  & > li {
+		cursor: pointer;
+		padding: 7px 5px 7px 18px;
+		transition: background-color 0.2s, color 0.2s;
+		font-size: 18px; 
+		&:hover {
+		  background-color: $beige2;
+		}
+		&.choice {
+		  background-color: $beige3;
+		  color: #fff;
+		}
+	  }
+	}
+  }
+}
+
+@media (max-width: 1600px) {
+	.cart {
+		&__contacts {
+			margin-top: 100px;
+		}
+		&__delivery {
+			margin-top: 100px;
+		}
+	}
+}
+
+@media (max-width: 1234px) {
+	.cart {
+		&__contacts {
+			.form-wrapper {
+				width: 100%;
+				gap: 30px;
+				.form-item {
+					&.name, &.phone {
+						width: calc(50% - 15px);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1066px) {
+	.cart {
+		&__banner {
+			border-radius: 0px 30px; 
+			padding: 12px 8px;
+			font-size: 12px; 
+		}
+		&__body {
+			margin-top: 47px;
+			ul {
+				width: 100%;
+				li {
+					position: relative;
+					padding-right: 80px;
+				}
+			}
+		}
+		&__rm {
+			margin-left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		&__delivery {
+			margin-top: 80px;
+			.wrapper {
+				flex-direction: column;
+				margin-top: 40px;
+				width: 100%;
+				.item {
+					input {
+						width: 100%;
+					}
+				}
+			}
+		}
+		&__contacts {
+			margin-top: 80px;
+			.form-wrapper {
+				margin-top: 0;
+			}
+		}
+		&__addInfo {
+			margin-top: 40px;
+		}
+		&__info {
+			width: 370px;
+		}
+	}
+	.select-box {
+		width: 100%;
+	}
+}
+
+@media (max-width: 760px) {
+	.cart {
+		&__body {
+			ul {
+				gap: 28px;
+				li {
+					align-items: start;
+				}
+			}
+		}
+		&__img {
+			width: 74px;
+			height: 60px; 
+			flex-shrink: 0;
+		}
+		&__info {
+			margin-left: 18px;
+			padding-bottom: 40px;
+			span {
+				&:first-child {
+					font-size: 13px; 
+					line-height: 1.2em;
+				}
+				&:nth-child(2) {
+					font-size: 12px; 
+					margin-top: 8px;
+				}
+				&:nth-child(3) {
+					font-size: 12px; 
+					margin-top: 4px;
+				}
+			}
+		}
+		&__count {
+			position: absolute;
+			left: 92px;
+			bottom: 0;
+			gap: 12px;
+			button {
+				width: 32px;
+				height: 32px; 
+			}
+			input {
+				font-size: 12px;
+			}
+		}
+		&__delivery {
+			.wrapper {
+				gap: 35px;
+				.item {
+					label {
+						font-size: 13px; 
+					}
+				}
+			}
+		}
+		&__subtitle {
+			span {
+				font-size: 22px; 
+				&::after {
+					top: -75%;
+				}
+			}
+		}
+		&__adress {
+			font-size: 14px;
+		}
+		&__addInfo {
+			span {
+				&:first-child {
+					font-size: 14px;
+				}
+				&:last-child {
+					font-size: 12px;
+				}
+			}
+		}
+		&__contacts {
+			.form-wrapper {
+				flex-direction: column;
+				gap: 0;
+				.form-item {
+					&.name, &.phone {
+						width: 100%;
+						label {
+							font-size: 13px;
+							bottom: 48px;
+						}
+						&.empty {
+							label {
+								font-size: 15px;
+								bottom: 14px;
+							}
+						}
+						input {
+							height: 44px;
+							padding-bottom: 16px;
+							font-size: 15px;
+						}
+					}
+				}
+			}
+			.form-bottom {
+				margin-top: 40px;
+				flex-direction: column-reverse;
+				gap: 20px;
+				.form-item {
+					&.pers {
+						font-size: 12px;
+						text-align: center;
+					}
+					&.submit {
+						width: 100%;
+						.btn {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.select-styled {
+		font-size: 15px;
+	}
+	.select-box {
+		height: 44px;
+	}
+	.select-options {
+		ul {
+			& > li {
+				font-size: 15px;
+			}
+		}
+		
+	}
+}
+
+@media (max-width: 500px) {
+	.air-datepicker {
+		width: 300px;
+	}
+	.cart {
+		&__contacts {
+			margin-top: 40px;
+		}
+		&__delivery {
+			margin-top: 55px;
+		}
+		&__adress {
+			margin-top: 30px;
+		}
+	}
+}

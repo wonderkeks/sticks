@@ -1,0 +1,437 @@
+@import "components/_fonts.scss";
+@import "components/_system-styles.scss";
+@import "components/_default.scss";
+@import "components/_animations.scss";
+
+@import "blocks/_header.scss";
+@import "blocks/_footer.scss";
+@import "blocks/_index.scss";
+@import "blocks/_catalog.scss";
+@import "blocks/_contacts.scss";
+@import "blocks/_cart.scss";
+@import "blocks/_product-page.scss";
+@import "blocks/_text-page.scss";
+
+
+// Header 
+.header{
+	&__logo{
+		
+	}
+}
+// Если шапка закреплена, добавить ей сдвиг в админке
+// body.user-logged-in .header{
+//     top: 79px;
+// }
+
+
+// Footer
+.footer{
+	&__box{
+
+	}
+}
+.popup{
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 11;
+	position: fixed;
+	top: 0;
+	right: -20px;
+	bottom: 0;
+	left: 0;
+	overflow-y: scroll;
+	padding: 30px 20px 30px 0;
+	transition: opacity 0.4s, visibility 0.4s;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+	}
+	&__window{
+		width: 871px; 
+		min-height: 284px;
+		margin: auto;
+		background-color: #fff;
+		border-radius: 90px 0px; 
+		position: relative;
+		top: -60px;
+		padding: 58px;
+		transition: top 0.4s;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&.active &__window{
+		top: 0;
+	}
+	&__close{
+		width: 22px;
+		height: 22px;
+		z-index: 1;
+		position: absolute;
+		top: 32px;
+		right: 32px;
+		cursor: pointer;
+		&:before,
+		&:after{
+			content: "";
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			border-radius: 2px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			transition: background-color 0.3s;
+		}
+		&:hover{
+			&:before,
+			&:after{
+				background-color: gray;
+			}
+		}
+		&:before{
+			transform: rotate(45deg);
+		}
+		&:after{
+			transform: rotate(-45deg);
+		}
+	}
+	h2{
+		font-size: 42px; 
+		text-align: center;
+		margin-bottom: 20px;
+		letter-spacing: 1.68px;
+		text-transform: uppercase; 
+		font-family: $font2;
+	}
+	h3{
+		font-size: 16px;  
+		text-align: center;
+		line-height: 1.5em;
+		font-weight: 400;
+		max-width: 514px;
+		margin: 0 auto;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.form-item {
+			&.name, &.phone {
+				margin-top: 35px;
+				width: 512px;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				input {
+					width: 100%;
+					height: 54px;
+					border-bottom: 1px solid $gray2;
+					transition: border-color 0.3s;
+					padding-bottom: 20px;
+					font-size: 18px; 
+					line-height: 1em;
+					@media (min-width: 1000px) {
+						&:hover {
+							border-bottom: 1px solid $beige3;
+						}						
+					}
+					&:focus {
+						border-bottom: 1px solid $beige3;
+					}
+				}
+				label {
+					font-size: 15px; 
+					color: $gray4;
+					position: absolute;
+					transition: all 0.3s;
+					bottom: 58px;
+				}
+				&.empty {
+					label {
+						bottom: 21px;
+						font-size: 18px;
+					}
+				}
+			}
+			&.personal {
+				width: 344px; 
+				text-align: center;
+				margin-top: 52px;
+				font-size: 14px; 
+				line-height: 1.28em;
+			}
+			&.submit {
+				.btn {
+					margin-top: 28px;
+					background-color: $beige3;
+					@media (min-width: 1000px) {
+						&:hover {
+							background-color: $brown;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.form{
+	&__field{
+		width: 100%;
+		height: 40px;
+		background-color: lightgray;
+		font-family: $font;
+		font-weight: 400;
+		font-size: 14px;
+		border: 0;
+		outline: none;
+		border-radius: 0;
+		margin-bottom: 20px;
+		padding: 0 25px;
+		&::-webkit-input-placeholder{
+			font-family: $font;
+			font-weight: 400;
+			font-size: 14px;
+			color: #949494;
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+		&::-moz-placeholder{
+			font-family: $font;
+			font-weight: 400;
+			font-size: 14px;
+			color: #949494;
+			opacity: 1;
+			transition: opacity 0.3s;
+		}
+		&:focus::-moz-placeholder{
+			opacity: 0 !important;
+		}
+		&:focus::-webkit-input-placeholder{
+			opacity: 0 !important;
+		}
+	}
+	&__btn{
+		margin: auto;
+	}
+}
+
+.up {
+	width: 70px;
+	height: 70px; 
+	border: 1px solid $beige3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;	
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+	z-index: 15;
+	background: #FFF; 
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	@media (min-width: 1000px) {
+		cursor: pointer;
+		&:hover {
+			border-color: $brown;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	.up {
+		width: 45px;
+		height: 45px; 
+		svg {
+			height: 20px;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.popup {
+		&__window {
+			max-width: 700px;
+			width: 100%;
+			padding: 40px 30px;
+			border-radius: 50px 0;
+		}
+		h2 {
+			font-size: 26px;
+		}
+		h3 {
+			font-size: 14px;
+		}
+		form {
+			.form-item {
+				&.name, &.phone {
+					width: 100%;
+					label {
+						font-size: 13px;
+						bottom: 48px;
+					}
+					&.empty {
+						label {
+							font-size: 15px;
+							bottom: 14px;
+						}
+					}
+					input {
+						height: 44px;
+						padding-bottom: 16px;
+						font-size: 15px;
+					}
+				}
+				&.personal {
+					width: 100%;
+					text-align: center;
+				}
+				&.submit {
+					width: 100%;
+					.btn {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.popup {
+		&__window {
+			padding: 40px 15px;
+			margin: auto 15px;
+		}
+		&__close {
+			top: 15px;
+			right: 15px;
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+// Главная страница
+.main{
+	
+}
+.arrows{
+	&__prev,
+	&__next{
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border-radius: 50%;
+		padding-bottom: 2px;
+		background-color: lightgray;
+		transition: background-color 0.3s;
+		&:hover{
+			background-color: gray;
+		}
+		&:before{
+			font-size: 30px;
+		}
+	}
+	&__prev{
+		&:before{
+			content: "\2039"
+		}
+	}
+	&__next{
+		&:before{
+			content: "\203A"
+		}
+	}
+}
+
+// Внутренние 
+.top{
+	padding: 55px 0;
+}
+.breadcrumbs{
+	li{
+		display: inline;
+		color: $gray4;
+		a {
+			transition: all 0.3s;
+		}		
+		span{
+			color: $black;
+		}
+		&:not(:last-child):after{
+			content: "";
+			display: inline-block;
+			width: 2px;
+			height: 2px;
+			border-radius: 100%;
+			background-color: $gray4;
+			margin: 0 6px;
+			position: relative;
+			top: -3px;
+		}
+		a {
+			@media (min-width: 1000px) {
+				&:hover {
+					color: $black;
+				}
+			}
+		}
+	}
+	
+}
+.page-title{
+	font-size: 58px; 
+	font-family: $font2;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-top: 30px;
+}
+.pager{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	ul{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		a{
+			min-width: 32px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 16px;
+			color: white;
+			background-color: lightgray;
+			padding: 0 7px;
+			transition: background-color 0.3s;
+			&:hover{
+				background-color: gray;
+			}
+			&.is-active{
+				background-color: black;
+			}
+		}
+	}
+}
+
+
+@import "components/_adaptive.scss";

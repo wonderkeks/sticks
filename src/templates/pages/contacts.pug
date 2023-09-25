@@ -1,0 +1,95 @@
+extends ../layout/main
+
+block append variables
+	- const pageTitle = "Контакты";
+	//- const prevPage = {href: '', text: ''};
+	//- const pageTitle_OFF = true;
+
+block content
+	include ../blocks/breadcrumbs
+	.contacts
+		.products__marquee.swiper 
+				.swiper-wrapper 
+					.swiper-slide 
+						h2 наши контакты
+					.swiper-slide 
+						h2 наши контакты
+					.swiper-slide 
+						h2 наши контакты
+		ul.contacts__info
+			li 
+				span телефон
+				span 
+					a(href="tel:+79087622903") +7 908 762 29 03
+			li 
+				span режим работы
+				span пн-пт 09:00-18:00 сб-вс выходной
+			li 
+				span почта
+				span 
+					a(href="mailto:magnum.antelnn@yandex.ru") magnum.antelnn@yandex.ru
+		.contacts__miniMaps 
+			.container 
+				ul 
+					li 
+						.contacts__subtitle адрес офиса
+						.contacts__adress 603071, г. Нижний Новгород ул. Волжская набережная д. 14
+						#miniMap1.miniMap.yamap
+					li 
+						.contacts__subtitle адрес завода
+						.contacts__adress 606950, Нижегородская область р.п. Тоншаево, ул. Заводская, д.6
+						#miniMap2.miniMap.yamap
+		.contacts__sales 
+			.contacts__bg-right 
+				img(src="img/contacts/sales-right.png", alt="")
+			.contacts__bg-left
+				img(src="img/contacts/sales-left.png", alt="")
+			.container 
+				h2 отдел продаж
+				ul 
+					li 
+						.contacts__images 
+							img(src="img/contacts/img1.png", alt="")
+						.contacts__name Алёна
+						.contacts__socials 
+							a(href="tel:+79087622903").contacts__phone +7 908 762 29 03
+							.contacts__icons 
+								a(href="#") 
+									img(src="img/icons/wu.svg", alt="")
+								a(href="#") 
+									img(src="img/icons/tg.svg", alt="")
+								a(href="#") 
+									img(src="img/icons/vi.svg", alt="")
+					li 
+						.contacts__images 
+							img(src="img/contacts/img2.png", alt="")
+						.contacts__name Алёна
+						.contacts__socials 
+							a(href="tel:+79087622903").contacts__phone +7 908 762 29 03
+							.contacts__icons 
+								a(href="#") 
+									img(src="img/icons/wu.svg", alt="")
+								a(href="#") 
+									img(src="img/icons/tg.svg", alt="")
+								a(href="#") 
+									img(src="img/icons/vi.svg", alt="")
+		.container
+			.contacts__call 
+				h2 обратный звонок
+				span.sub Оставьте свои контактные данные и мы свяжемся с вами в ближайшее
+				form(action="#")
+					fieldset
+						.form-item.name.empty
+							label(for="name") Ваше имя *
+							input(type="text")#name
+						.form-item.phone.empty
+							label(for="tel") Телефон *
+							input(type="tel")#tel
+					fieldset
+						.form-item.submit
+							input(type="submit" value="Отправить заявку").btn
+						.form-item.personal
+							span Отправляя форму, вы даете согласие на <a href="#">обработку персональных данных</a> 
+	section.map 
+		.container 
+			#map
