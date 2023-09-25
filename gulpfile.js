@@ -29,8 +29,6 @@ import newer from 'gulp-newer';
 import clean from 'gulp-clean';
 import browserSync from 'browser-sync';
 import pug from 'gulp-pug';
-import vinylFTP from 'vinyl-ftp';
-import util from 'gulp-util';
 const sass = gulpSass(dartSass);
 
 
@@ -169,22 +167,6 @@ function cleanDist(){
 };
 
 
-import * as nodePath from 'path';
-const repositoryName = nodePath.basename(nodePath.resolve());
-const connect = {
-	host: 'html.webshop.ru', // Адрес FTP сервера
-	user: 'htmlshop', // Имя пользователя
-	password: 'L540YD9y', // Пароль
-	parallel: 5 // Количество одновременных потоков
-};
-function uploadFtp(){
-	connect.log = util.log;
-	const ftpConnect = vinylFTP.create(connect);
-	return src(`${path.dist.html}/**/*.*`)
-		.pipe(ftpConnect.dest(`/public_html/${repositoryName}`))
-};
-
-
 
 function watcher(){
 	gulpWatch([path.src.pug], { usePolling: true }, pugDist)
@@ -201,9 +183,8 @@ function watcher(){
 const watchLocal = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(browsersync, watcher));
 const watch = series(parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(watcher));
 const build = series(cleanDist, parallel(pugDist, stylesDist, stylesLibs, jsDist, jsLibs, images, fontsDist), parallel(stylesMin, jsMin));
-const ftp =  series(parallel(uploadFtp));
 
 
 
-export { watchLocal, watch, build, ftp }
+export { watchLocal, watch, build }
 export default watchLocal;
